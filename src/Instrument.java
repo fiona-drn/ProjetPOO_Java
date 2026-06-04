@@ -40,17 +40,21 @@ public class Instrument extends Produit {
 
     //mettre x instru dans y categorie (si c'est un violon alors cordes...)
     public void InstruCatego(String categorie) {
-        //si mets == alors compares les réferences, avec equales c'est les valeurs
-        if (nom.equals("violloncelle") || nom.equals("contrebasse") || nom.equals("alto") || nom.equals("violon") || nom.equals("guitare") || nom.equals("harpe") || nom.equals("ukulele")|| nom.equals("basse")) {
+        String lower = nom.toLowerCase();
+        // Cordes
+        if (lower.equals("violoncelle") || lower.equals("contrebasse") || lower.equals("alto") || lower.equals("violon") || lower.equals("guitare") || lower.equals("harpe") || lower.equals("ukulele") || lower.equals("basse")) {
             list_fam.add(Famille.Cordes);
         }
-        if(nom.equals("flute") || nom.equals("clarinette") || nom.equals("saxophone") || nom.equals("hautbois") || nom.equals("basson") || nom.equals("trompette") || nom.equals("trombone") || nom.equals("cor") || nom.equals("tuba")) {
+        // Vents / cuivres
+        if (lower.equals("flute") || lower.equals("clarinette") || lower.equals("saxophone") || lower.equals("hautbois") || lower.equals("basson") || lower.equals("trompette") || lower.equals("trombone") || lower.equals("cor") || lower.equals("tuba")) {
             list_fam.add(Famille.Vents);
         }
-        if(nom.equals("batterie") || nom.equals("cymbales") || nom.equals("timbales") || nom.equals("marimba") || nom.equals("xylophone") || nom.equals("djembé") || nom.equals("caisse claire") || nom.equals("grosse caisse") || nom.equals("triangle") || nom.equals("piano") ||nom.equals("orgue")) {
+        // Percussions
+        if (lower.equals("batterie") || lower.equals("cymbales") || lower.equals("timbales") || lower.equals("marimba") || lower.equals("xylophone") || lower.equals("djembé") || lower.equals("caisse claire") || lower.equals("grosse caisse") || lower.equals("triangle") || lower.equals("piano") || lower.equals("orgue")) {
             list_fam.add(Famille.Percussions);
         }
-        if (nom.equals("luth") || nom.equals("viole de gambe") || nom.equals("mandoline") || nom.equals("clavecin") || nom.equals("lyre") || nom.equals("psaltérion") || nom.equals("balafon") || nom.equals("bendir") || nom.equals("gong") || nom.equals("guzheng") || nom.equals("vina") || nom.equals("tabla")){
+        // Anciens / instruments historiques
+        if (lower.equals("luth") || lower.equals("viole de gambe") || lower.equals("mandoline") || lower.equals("clavecin") || lower.equals("lyre") || lower.equals("psaltérion") || lower.equals("balafon") || lower.equals("bendir") || lower.equals("gong") || lower.equals("guzheng") || lower.equals("vina") || lower.equals("tabla")) {
             list_fam.add(Famille.Anciens);
         }
     }
